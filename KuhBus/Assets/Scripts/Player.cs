@@ -8,6 +8,13 @@ public class Player : MonoBehaviour
     public int life = 100;
     private LifeBar lifebar;
     public bool catEvil = false;
+    public float catEvilProbability = 0.5f;
+    public float minTimeToUpdate = 5.0f;    // minimum time until cat might change to evil
+    //public float updateTime = 2.5f;     // time in seconds to check if cat changes to evil after minTimeToUpdate
+
+    private float timer = 0.0f;
+    private System.Random rnd;
+    private int precision = 1000;    // precision of random number
 
     public delegate void PlayerDelegate();
     public static event PlayerDelegate OnPlayerDied;
@@ -18,12 +25,34 @@ public class Player : MonoBehaviour
     void Start()
     {
         lifebar = Singleton.instance.lifebar;
+        timer = 0.0f;
+        rnd = new System.Random();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (timer >= minTimeToUpdate)
+        {
+            int r = rnd.Next(0,precision);
+            if (catEvil == false)
+            {
+                if (r >= catEvilProbability * precision)
+                {
+                    // cat turns evil
+                    catEvil = true;
+                }
+            } else
+            {
+                if (r < catEvilProbability * precision)
+                {
+                    // cat turns good
+                    catEvil = false;
+                }
+            }
+            timer = 0;
+        }
     }
 
     public void healPlayer(int heal)
