@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1ca65482e4e3b3d4a90a3df950894cd1
+guid: a35fd6ebb61bc344c9cc3d2513393053
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: good-walk-right_0
+      name: good-walk-right 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2294b267314d8c4dbbb1f9d50bff85e
-      internalID: -928918983
+      spriteID: 7dfa40b311e89ad48b4034b235b97716
+      internalID: -75593135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-right_1
+      name: good-walk-right 1_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4e7bf538dd82204f80839c1729ffa6e
-      internalID: -1576585613
+      spriteID: 7605f076d8916b642ae4197aef88a52b
+      internalID: 671446674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-right_2
+      name: good-walk-right 1_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24c82602764341d4592c921dbbefc585
-      internalID: 622929447
+      spriteID: 9267550ea0e2752459e67bfd423b7b7c
+      internalID: 1663370090
       vertices: []
       indices: 
       edges: []
@@ -177,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      good-walk-right_2: 622929447
-      good-walk-right_0: -928918983
-      good-walk-right_1: -1576585613
+      good-walk-right 1_0: -75593135
+      good-walk-right 1_2: 1663370090
+      good-walk-right 1_1: 671446674
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
