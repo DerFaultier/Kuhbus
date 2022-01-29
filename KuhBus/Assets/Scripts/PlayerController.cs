@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
         transform.parent = null;
         platform = null;
-        if (hit.transform.GetComponent<MovingPlatform>())
+        if (hit && hit.transform.GetComponent<MovingPlatform>())
         {
             transform.parent = hit.transform;
             platform = hit.transform;
