@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6146402902800254297}
   - component: {fileID: 3654454722995677716}
   - component: {fileID: 1606114243}
+  - component: {fileID: 7991026417800412862}
   m_Layer: 0
   m_Name: Human
   m_TagString: Untagged
@@ -161,3 +162,18 @@ MonoBehaviour:
   idleTime: 3
   walkLeftTime: 5
   walkRightTime: 5
+--- !u!114 &7991026417800412862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8322780189704487563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a87f2f0a5c81643899eef8576a8ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toEvilCat: 1
+  toGoodCat: 0
+  damage: 5
