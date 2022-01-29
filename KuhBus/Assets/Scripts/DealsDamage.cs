@@ -29,7 +29,7 @@ public class DealsDamage : MonoBehaviour
     {
         if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
         {
-            print("Kuhbus recaived damage!!!");
+            print("Kuhbus received damage!!!");
             collision.collider.GetComponent<Player>().hurtPlayer(damage);
             var contactNormal = collision.contacts[0].normal;
             collision.collider.GetComponent<PlayerController>().stun(0.2f);
