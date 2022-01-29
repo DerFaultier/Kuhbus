@@ -51,7 +51,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 45
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 41
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -61,7 +61,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 45
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 41
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -71,7 +71,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 45
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 41
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -81,7 +81,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 45
-      m_TileSpriteIndex: 42
+      m_TileSpriteIndex: 41
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -180,7 +180,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 4
-    m_Data: {fileID: 11400000, guid: 73052286f7cee0442bfa709b0fe4ddd4, type: 2}
+    m_Data: {fileID: 11400000, guid: e867e84c2a2700f4f929faac52dc1a60, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -264,10 +264,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 4
+    m_Data: {fileID: -670753564, guid: d3528fa5fdc707a4c96a7b9c62c81242, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 4
-    m_Data: {fileID: 557293614, guid: c49e5a87eee16dc4c8587a195367221e, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 4
     m_Data:
@@ -290,6 +290,8 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 4
     m_Data: {r: 1, g: 1, b: 1, a: 1}
+  - m_RefCount: 0
+    m_Data: {r: NaN, g: NaN, b: NaN, a: NaN}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -420,20 +422,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 8423133830964714927}
     m_ColliderPaths:
-    - - X: -19800000
-        Y: -9900000
-      - X: 19900000
-        Y: -9900000
-      - X: 19900000
-        Y: 99999
-      - X: -19800000
-        Y: 99999
+    - - X: -19800100
+        Y: 100040
+      - X: -19800100
+        Y: -9900041
+      - X: -19800041
+        Y: -9900100
+      - X: 19900041
+        Y: -9900100
+      - X: 19900100
+        Y: -9900041
+      - X: 19900100
+        Y: 100040
+      - X: 19900041
+        Y: 100099
+      - X: -19800041
+        Y: 100099
   m_CompositePaths:
     m_Paths:
-    - - {x: 1.9899708, y: -0.99}
-      - {x: 1.9899708, y: 0.0099999}
-      - {x: -1.98, y: 0.0099706}
-      - {x: -1.9799708, y: -0.99}
+    - - {x: 1.9899749, y: -0.99001}
+      - {x: 1.9899749, y: 0.0100099}
+      - {x: -1.98001, y: 0.0099747}
+      - {x: -1.9799749, y: -0.99001}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!251 &8423133830964714930
