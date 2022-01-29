@@ -20,8 +20,13 @@ public class Parallax : MonoBehaviour
     {
         Vector3 t = transform.position;
         float x = camera.position.x * factor;
-        float delta = Mathf.FloorToInt( (camera.position.x - x) / width ) * width + offset;
-        t[0] = x + delta;
+        float delta = 0;
+        if (x>0)
+          delta = Mathf.FloorToInt( (camera.position.x - x) / width ) * width + offset;
+        else
+          delta = Mathf.CeilToInt( (camera.position.x - x) / width ) * width + offset;
+
+    t[0] = x + delta;
 
         t[1] = Mathf.Clamp(camera.position.y * factor, -5, +5);
         transform.position = t;
