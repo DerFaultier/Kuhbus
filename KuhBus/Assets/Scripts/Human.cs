@@ -33,12 +33,12 @@ public class Human : MonoBehaviour
         else if(secs <= idleTime + walkLeftTime)
         {
             state = State.walk_left;
-            transform.Translate(-walkSpeed/1000, 0, 0);
+            transform.Translate(-walkSpeed*Time.deltaTime, 0, 0);
         }
         else
         {
             state = State.walk_right;
-            transform.Translate(walkSpeed/1000, 0, 0);
+            transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
         }
 
         anim.SetInteger("state", (int)state);
