@@ -92,6 +92,10 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, v0);
             state = player.catEvil ? State.evil_jump : State.jump;
           }
+          if (Input.GetButtonDown("Fire1"))
+            {
+                GetComponent<Attack>().doAttack();
+            }
         }
 
         if ( !isGrounded && ( !Input.GetButton("Jump") || rb.velocity.y < 0.1f))
@@ -127,6 +131,8 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y < 0.1f) state = player.catEvil ? State.evil_fall : State.fall;
             else                      state = player.catEvil ? State.evil_jump : State.jump;
         }
+        if (GetComponent<Attack>().attacking)
+            state = player.catEvil ? State.evil_attack : State.attack;
 
         anim.SetInteger("state", (int)state); 
     }
