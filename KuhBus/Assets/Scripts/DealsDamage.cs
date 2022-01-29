@@ -5,7 +5,8 @@ using UnityEngine;
 //[RequireComponent(typeof(player))]
 public class DealsDamage : MonoBehaviour
 {
-
+    public bool toEvilCat=true;
+    public bool toGoodCat=true;
     public int damage = 10;
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,14 @@ public class DealsDamage : MonoBehaviour
         
     }
 
+    bool CatCondition(GameObject cat)
+    {
+        return (cat.GetComponent<player>().catEvil && toEvilCat) || (!cat.GetComponent<player>().catEvil && toGoodCat);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
         {
             print("Kuhbus recaived damage!!!");
             collision.collider.GetComponent<player>().hurtPlayer(damage);

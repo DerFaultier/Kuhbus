@@ -55,6 +55,12 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -rayLength, 0));
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Ground" || collision.collider.GetComponent<MovingPlatform>())
+            transform.parent = collision.transform;
+    }
+
     private void nothing()
     {
 

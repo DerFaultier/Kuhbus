@@ -7,6 +7,7 @@ public class player : MonoBehaviour
     public int max_life = 100;
     public int life = 100;
     private LifeBar lifebar;
+    public bool catEvil = false;
 
     public delegate void PlayerDelegate();
     public static event PlayerDelegate OnPlayerDied;
