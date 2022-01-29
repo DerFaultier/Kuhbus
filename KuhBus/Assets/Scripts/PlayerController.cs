@@ -22,7 +22,11 @@ public class PlayerController : MonoBehaviour
     private float defaultGravity;
     private float v0;
 
-   private bool isStunned;
+    private bool isGrounded;
+
+    private bool isStunned;
+
+
 
   // Start is called before the first frame update
   void Start()
@@ -46,6 +50,8 @@ public class PlayerController : MonoBehaviour
 
         defaultGravity = rb.gravityScale;
 
+        isGrounded = IsGrounded();
+
         movement();
         animationState();
     }
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Ground" || collision.collider.GetComponent<MovingPlatform>())
+        if (isGrounded || collision.collider.GetComponent<MovingPlatform>())
             transform.parent = collision.transform;
     }
 
@@ -77,14 +83,14 @@ public class PlayerController : MonoBehaviour
           float hMovement = Input.GetAxis("Horizontal");
           rb.velocity = new Vector2(hMovement * moveSpeed, rb.velocity.y);
 
-          if (Input.GetButtonDown("Jump") && IsGrounded())
+          if (Input.GetButtonDown("Jump") && isGrounded)
           {
             rb.velocity = new Vector2(rb.velocity.x, v0);
             state = State.jump;
           }
         }
 
-        if ( !IsGrounded() && ( !Input.GetButton("Jump") || rb.velocity.y < 0.1f))
+        if ( !isGrounded && ( !Input.GetButton("Jump") || rb.velocity.y < 0.1f))
         {
             rb.gravityScale = fallingGravity * defaultGravity;
         }
@@ -106,7 +112,7 @@ public class PlayerController : MonoBehaviour
     private void animationState()
     {
 
-        if (IsGrounded())
+        if (isGrounded)
         {
             if (Mathf.Abs(rb.velocity.x) > 0.1f)
                 state = State.run;
