@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4855087954818114971}
   - component: {fileID: 4855087954818114970}
   - component: {fileID: 4855087954818114966}
+  - component: {fileID: 1092178625187759536}
+  - component: {fileID: 3083649710741918415}
   - component: {fileID: 4855087954818114973}
   - component: {fileID: 4855087954818114969}
   m_Layer: 0
@@ -107,7 +109,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &4855087954818114966
 MonoBehaviour:
@@ -125,6 +127,34 @@ MonoBehaviour:
   idleTime: 3
   walkLeftTime: 5
   walkRightTime: 5
+--- !u!114 &1092178625187759536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855087954818114975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52174e0b360ac5146b391a52d6ab2aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 1
+--- !u!114 &3083649710741918415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855087954818114975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a87f2f0a5c81643899eef8576a8ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toEvilCat: 1
+  toGoodCat: 1
+  damage: 10
 --- !u!95 &4855087954818114973
 Animator:
   serializedVersion: 4
