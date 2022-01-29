@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     private float v0;
 
     private bool isGrounded;
+    private Transform platform;
 
     private bool isStunned;
-
 
 
   // Start is called before the first frame update
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         defaultGravity = rb.gravityScale;
 
-        isGrounded = IsGrounded();
+        groundCheck();
 
         movement();
         animationState();
@@ -63,17 +63,19 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isGrounded || collision.collider.GetComponent<MovingPlatform>())
-            transform.parent = collision.transform;
     }
 
-    private void nothing()
-    {
-
-    }
-    private bool IsGrounded() {
+    private void groundCheck() {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0,-1,0), rayLength, ground);
-        return /*coll.IsTouchingLayers(ground) ||*/ hit;
+        isGrounded = hit;
+
+        transform.parent = null;
+        platform = null;
+        if (hit.transform.GetComponent<MovingPlatform>())
+        {
+            transform.parent = hit.transform;
+            platform = hit.transform;
+        }
     } 
 
     private void movement()
@@ -123,24 +125,6 @@ public class PlayerController : MonoBehaviour
             if (rb.velocity.y < 0.1f) state = State.fall;
             else                      state = State.jump;
         }
-
-        //switch (state)
-        //{
-        //    default:
-        //    case State.idle:
-        //    case State.run:
-        //        if (rb.velocity.y > 0.1f && !IsGrounded())
-        //            state = State.jump;
-        //        else if (Mathf.Abs(rb.velocity.x) > 0.1f) 
-        //            state = State.run;
-        //        else 
-        //            state = State.idle;
-        //        break;
-        //    case State.jump:
-        //        if (rb.velocity.y < 0) state = State.fall;  break;
-        //    case State.fall:
-        //        if (coll.IsTouchingLayers(ground)) state = State.idle; break;
-        //}
 
         anim.SetInteger("state", (int)state); 
     }
