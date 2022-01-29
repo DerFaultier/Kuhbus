@@ -11145,6 +11145,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human
       objectReference: {fileID: 0}
+    - target: {fileID: 2139757421588068146, guid: 75ff3464b09005e4f9a4397951e334d5, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2139757421588068148, guid: 75ff3464b09005e4f9a4397951e334d5, type: 3}
       propertyPath: m_RootOrder
       value: 6
