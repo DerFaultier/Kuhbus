@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1019643810093783476}
   - component: {fileID: 1019643810093783472}
   - component: {fileID: 4565070469234654862}
+  - component: {fileID: 3165009060004396817}
   - component: {fileID: 1019643810093783473}
   - component: {fileID: 5429667175927827645}
   m_Layer: 0
@@ -147,6 +148,21 @@ MonoBehaviour:
   catEvil: 0
   catEvilProbability: 0.5
   minTimeToUpdate: 5
+--- !u!114 &3165009060004396817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019643810093783483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d63a99b1bfb73c3499c6b3623a4c20c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 1
+  dmg: 1
+  attacking: 0
 --- !u!95 &1019643810093783473
 Animator:
   serializedVersion: 4
