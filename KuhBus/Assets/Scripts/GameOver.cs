@@ -20,6 +20,7 @@ public class GameOver : MonoBehaviour
     {
         //GetComponent("GameOverPage").gameObject.SetActive(true);
         //transform.GetChild(0).gameObject.SetActive(false);
+        transform.Find("Lifebar").gameObject.SetActive(false);
         transform.Find("GameOverPage").gameObject.SetActive(true);
     }
 
