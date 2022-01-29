@@ -21,6 +21,9 @@ public class DealsDamage : MonoBehaviour
     if(collision.collider.tag=="Player")
     {
       print("Kuhbus recaived damage!!!");
+      var contactNormal = collision.contacts[0].normal;
+      collision.collider.GetComponent<PlayerController>().stun(0.2f);
+      collision.collider.GetComponent<Rigidbody2D>().velocity=contactNormal * -20;  //.AddForce(contactNormal*5, ForceMode2D.);
     }
   }
 }

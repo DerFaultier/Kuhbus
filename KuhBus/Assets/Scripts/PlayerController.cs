@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour
     private float defaultGravity;
     private float v0;
 
-    // Start is called before the first frame update
-    void Start()
+   private bool isStunned;
+
+  // Start is called before the first frame update
+  void Start()
     {
         rb   = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
@@ -64,13 +66,16 @@ public class PlayerController : MonoBehaviour
 
     private void movement()
     {
-        float hMovement = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(hMovement * moveSpeed, rb.velocity.y);
-
-        if (Input.GetButtonDown("Jump") && IsGrounded())
+        if (!isStunned)
         {
+          float hMovement = Input.GetAxis("Horizontal");
+          rb.velocity = new Vector2(hMovement * moveSpeed, rb.velocity.y);
+
+          if (Input.GetButtonDown("Jump") && IsGrounded())
+          {
             rb.velocity = new Vector2(rb.velocity.x, v0);
             state = State.jump;
+          }
         }
 
         if ( !IsGrounded() && ( !Input.GetButton("Jump") || rb.velocity.y < 0.1f))
@@ -127,4 +132,21 @@ public class PlayerController : MonoBehaviour
 
         anim.SetInteger("state", (int)state); 
     }
+
+
+    public void stun(float seconds)
+    {
+      StopAllCoroutines();
+      isStunned = true;
+      StartCoroutine("stopStun", seconds);
+    }
+
+    private IEnumerator stopStun(float seconds)
+    {
+      yield return new WaitForSeconds(seconds);
+      isStunned = false;
+    }
 }
+
+
+
