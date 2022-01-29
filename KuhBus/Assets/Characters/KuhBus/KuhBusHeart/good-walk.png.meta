@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a35fd6ebb61bc344c9cc3d2513393053
+guid: 2c98fe5f900990847a0a83a9465ba08f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: good-walk-right 1_0
+      name: good-walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dfa40b311e89ad48b4034b235b97716
-      internalID: -75593135
+      spriteID: 81d42d3d451a3894aa8f3f66e670ede6
+      internalID: -1111747920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-right 1_1
+      name: good-walk_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7605f076d8916b642ae4197aef88a52b
-      internalID: 671446674
+      spriteID: b6b339781ab56ff49bc5dc38ceaab426
+      internalID: -552636561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-right 1_2
+      name: good-walk_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9267550ea0e2752459e67bfd423b7b7c
-      internalID: 1663370090
+      spriteID: 65aeda368593ed742bd45fbff113f6fd
+      internalID: 1970672083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-walk_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd504f7c9b422aa439c135df97e3054d
+      internalID: -789528160
       vertices: []
       indices: 
       edges: []
@@ -177,9 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      good-walk-right 1_0: -75593135
-      good-walk-right 1_2: 1663370090
-      good-walk-right 1_1: 671446674
+      good-walk_1: -552636561
+      good-walk_0: -1111747920
+      good-walk_2: 1970672083
+      good-walk_3: -789528160
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

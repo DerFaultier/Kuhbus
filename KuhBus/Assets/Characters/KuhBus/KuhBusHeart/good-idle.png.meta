@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b915377895e5164489ff37b6e954ee7f
+guid: 39e532e563ce0ad4db6d20cbb91f2c6a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: good-walk-left_0
+      name: good-idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84595ed8ffcb81646a663e4dcbc19f93
-      internalID: -183908395
+      spriteID: 960c4903a3364d44ab3c00dd5d13f1a4
+      internalID: -920780016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-left_1
+      name: good-idle_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52605adf915600a41a622545f985231b
-      internalID: -2035920774
+      spriteID: 42aeb928035383f49b04d32ee16548f1
+      internalID: -1780176681
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: good-walk-left_2
+      name: good-idle_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,8 +160,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c77abf08e0d24284e94f7e117dc5e7c3
-      internalID: 366674723
+      spriteID: 7d7d1169f9b74c8408a75060965acfe1
+      internalID: 488662525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-idle_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe439fd06384ca34995cc127c6f96109
+      internalID: 1283294596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-idle_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b681201da2be3da4ba46286028de538f
+      internalID: -592167520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-idle_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2172978d8f4bd545864bf25e11fdef1
+      internalID: -2078126487
       vertices: []
       indices: 
       edges: []
@@ -177,9 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      good-walk-left_1: -2035920774
-      good-walk-left_0: -183908395
-      good-walk-left_2: 366674723
+      good-idle_5: -2078126487
+      good-idle_2: 488662525
+      good-idle_4: -592167520
+      good-idle_1: -1780176681
+      good-idle_3: 1283294596
+      good-idle_0: -920780016
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

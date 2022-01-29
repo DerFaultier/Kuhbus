@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d4fa950efcd91b54d9bb16a8b8d513e8
+guid: 06f5a4a1aa16d9f4389ecf3a227ef7bf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: evil-walk-right 1_0
+      name: good-attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63d477c95f5096a4f9ce6c4c4631df1d
-      internalID: -1128472332
+      spriteID: c44970f35c9c5cd43b8663e895785511
+      internalID: -327803993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: evil-walk-right 1_1
+      name: good-attack_1
       rect:
         serializedVersion: 2
         x: 32
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06ebdadc8f9e1ea45ad7aa5f444bf388
-      internalID: -1286237123
+      spriteID: f317ec2af250ad94cb6cf87051caa458
+      internalID: 1142076933
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: evil-walk-right 1_2
+      name: good-attack_2
       rect:
         serializedVersion: 2
         x: 64
@@ -160,8 +160,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9466ab07183e8ae4ea1b7fd5521081c8
-      internalID: -498826969
+      spriteID: fea798c14d3ed384cae5d6b2f1573a27
+      internalID: 1621921892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: good-attack_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c5569d5a43a644f89cc17ae9b799c9
+      internalID: 1964939992
       vertices: []
       indices: 
       edges: []
@@ -177,9 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      evil-walk-right 1_0: -1128472332
-      evil-walk-right 1_1: -1286237123
-      evil-walk-right 1_2: -498826969
+      good-attack_0: -327803993
+      good-attack_2: 1621921892
+      good-attack_1: 1142076933
+      good-attack_3: 1964939992
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
