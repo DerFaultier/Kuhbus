@@ -146,6 +146,28 @@ public class PlayerController : MonoBehaviour
       yield return new WaitForSeconds(seconds);
       isStunned = false;
     }
+
+    void OnDamageReceived_Func()
+    {
+        //anim.SetInteger("state", (int)state);
+    }
+
+    void OnPlayerDied_Func()
+    {
+        rb.simulated = false;
+    }
+
+    private void OnEnable()
+    {
+        player.OnDamageReceived += OnDamageReceived_Func;
+        player.OnPlayerDied += OnPlayerDied_Func;
+    }
+
+    private void OnDisable()
+    {
+        player.OnDamageReceived -= OnDamageReceived_Func;
+        player.OnPlayerDied -= OnPlayerDied_Func;
+    }
 }
 
 

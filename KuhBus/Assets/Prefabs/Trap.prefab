@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4200249499290069557}
   - component: {fileID: 4200249499290069556}
   - component: {fileID: 4200249499290069559}
-  - component: {fileID: 4200249499290069554}
+  - component: {fileID: 5123772075546167458}
   m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
@@ -115,7 +115,7 @@ PolygonCollider2D:
       - {x: -0.5, y: 0}
       - {x: 0, y: -0.25}
       - {x: 0.5, y: 0}
---- !u!114 &4200249499290069554
+--- !u!114 &5123772075546167458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a87f2f0a5c81643899eef8576a8ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
