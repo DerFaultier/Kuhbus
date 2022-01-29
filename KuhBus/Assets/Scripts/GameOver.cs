@@ -25,11 +25,11 @@ public class GameOver : MonoBehaviour
 
     private void OnEnable()
     {
-        player.OnPlayerDied += OnPlayerDied_Func;
+        Player.OnPlayerDied += OnPlayerDied_Func;
     }
 
     private void OnDisable()
     {
-        player.OnPlayerDied -= OnPlayerDied_Func;
+        Player.OnPlayerDied -= OnPlayerDied_Func;
     }
 }

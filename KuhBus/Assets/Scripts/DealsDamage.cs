@@ -22,7 +22,7 @@ public class DealsDamage : MonoBehaviour
 
     bool CatCondition(GameObject cat)
     {
-        return (cat.GetComponent<player>().catEvil && toEvilCat) || (!cat.GetComponent<player>().catEvil && toGoodCat);
+        return (cat.GetComponent<Player>().catEvil && toEvilCat) || (!cat.GetComponent<Player>().catEvil && toGoodCat);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,7 +30,7 @@ public class DealsDamage : MonoBehaviour
         if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
         {
             print("Kuhbus recaived damage!!!");
-            collision.collider.GetComponent<player>().hurtPlayer(damage);
+            collision.collider.GetComponent<Player>().hurtPlayer(damage);
             var contactNormal = collision.contacts[0].normal;
             collision.collider.GetComponent<PlayerController>().stun(0.2f);
             collision.collider.GetComponent<Rigidbody2D>().velocity = contactNormal * -20;  //.AddForce(contactNormal*5, ForceMode2D.);

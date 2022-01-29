@@ -171,14 +171,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        player.OnDamageReceived += OnDamageReceived_Func;
-        player.OnPlayerDied += OnPlayerDied_Func;
+        Player.OnDamageReceived += OnDamageReceived_Func;
+        Player.OnPlayerDied += OnPlayerDied_Func;
     }
 
     private void OnDisable()
     {
-        player.OnDamageReceived -= OnDamageReceived_Func;
-        player.OnPlayerDied -= OnPlayerDied_Func;
+        Player.OnDamageReceived -= OnDamageReceived_Func;
+        Player.OnPlayerDied -= OnPlayerDied_Func;
     }
 }
 
