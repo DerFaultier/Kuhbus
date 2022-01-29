@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private float rayLength = 1f;
 
-    private enum State { idle, run, jump, fall, evil_idle, evil_run, evil_jump, evil_fall };
+    private enum State { idle, run, jump, fall, attack, evil_idle, evil_run, evil_jump, evil_fall, evil_attack };
     private State state = State.idle;
     private Rigidbody2D rb;
     private Collider2D  coll;
