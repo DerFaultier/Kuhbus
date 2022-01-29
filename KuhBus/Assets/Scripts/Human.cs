@@ -5,10 +5,11 @@ using UnityEditor;
 
 public class Human : MonoBehaviour
 {
-    private enum State { idle, walk_left, walk_right};
+    private enum State { idle, walk};
     private State state = State.idle;
     private Animator anim;
     private float secTotal;
+    private Vector2 scal;
     public float walkSpeed = 1;
     public float idleTime = 3;
     public float walkLeftTime = 5;
@@ -18,7 +19,7 @@ public class Human : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
+        scal = transform.localScale;
         secTotal = idleTime + walkLeftTime + walkRightTime;
     }
 
@@ -32,12 +33,14 @@ public class Human : MonoBehaviour
         }
         else if(secs <= idleTime + walkLeftTime)
         {
-            state = State.walk_left;
+            state = State.walk;
+            transform.localScale = scal;
             transform.Translate(-walkSpeed*Time.deltaTime, 0, 0);
         }
         else
         {
-            state = State.walk_right;
+            state = State.walk;
+            transform.localScale = new Vector2(scal.x*(-1), scal.y);
             transform.Translate(walkSpeed * Time.deltaTime, 0, 0);
         }
 
