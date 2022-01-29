@@ -13,11 +13,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private float rayLength = 1f;
 
-    private enum State { idle, run, jump, fall };
+    private enum State { idle, run, jump, fall, evil_idle, evil_run, evil_jump, evil_fall };
     private State state = State.idle;
     private Rigidbody2D rb;
     private Collider2D  coll;
     private Animator    anim;
+    private Player player;
 
     private float defaultGravity;
     private float v0;
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour
         rb   = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
-
+        player = GetComponent<Player>();
 
         v0 = 2f * jumpHeight * moveSpeed / jumpDistance;
         rb.gravityScale = 2f * jumpHeight * (moveSpeed * moveSpeed) / (jumpDistance * jumpDistance);
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
           if (Input.GetButtonDown("Jump") && isGrounded)
           {
             rb.velocity = new Vector2(rb.velocity.x, v0);
-            state = State.jump;
+            state = player.catEvil ? State.evil_jump : State.jump;
           }
         }
 
@@ -118,13 +119,13 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             if (Mathf.Abs(rb.velocity.x) > 0.1f)
-                state = State.run;
+                state = player.catEvil ? State.evil_run : State.run;
             else
-                state = State.idle;
+                state = player.catEvil ? State.evil_idle : State.idle;
         } else
         {
-            if (rb.velocity.y < 0.1f) state = State.fall;
-            else                      state = State.jump;
+            if (rb.velocity.y < 0.1f) state = player.catEvil ? State.evil_fall : State.fall;
+            else                      state = player.catEvil ? State.evil_jump : State.jump;
         }
 
         anim.SetInteger("state", (int)state); 
