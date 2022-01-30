@@ -3600,7 +3600,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 809fcdb20e87cbe419ee368a246b5f17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3686,7 +3686,9 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4627110426462092052}
     m_ColliderPaths:
-    - - X: 336600032
+    - - X: 425800032
+        Y: -19700000
+      - X: 336600032
         Y: -19700000
       - X: 326800000
         Y: -9899968
@@ -3738,8 +3740,6 @@ CompositeCollider2D:
         Y: -79200000
       - X: 425800032
         Y: -79200000
-      - X: 425800032
-        Y: -19700000
   m_CompositePaths:
     m_Paths:
     - - {x: 42.579975, y: -7.92}

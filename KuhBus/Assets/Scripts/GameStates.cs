@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameStates : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class GameStates : MonoBehaviour
     public delegate void GameDelegate();
     public static event GameDelegate OnGameStarted;
 
+    private AudioSource audioEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,8 @@ public class GameStates : MonoBehaviour
         transform.Find("GameStartPage").gameObject.SetActive(true);
         highscore = PlayerPrefs.GetFloat("HighScore");
         gamepage.transform.Find("Highscore").gameObject.GetComponent<Text>().text = "Highscore: " + highscore.ToString("0.00");
+
+        audioEffect = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -60,6 +65,15 @@ public class GameStates : MonoBehaviour
     {
         gamepage.gameObject.SetActive(false);
         transform.Find("GameOverPage").gameObject.SetActive(true);
+        audioEffect.Play();
+
+        StartCoroutine("reloadScene", 3);
+    }
+
+    private IEnumerator reloadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnPlayerWon_Func()

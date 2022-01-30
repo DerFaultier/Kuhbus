@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     public float catEvilProbability = 0.5f;
     public float minTimeToUpdate = 5.0f;    // minimum time until cat might change to evil
     //public float updateTime = 2.5f;     // time in seconds to check if cat changes to evil after minTimeToUpdate
+    public AudioSource hurtAudio;
+    public AudioSource healAudio;
+    private float healAudioDelay;
+    public AudioSource evilAudio;
 
     private float timer = 0.0f;
     private System.Random rnd;
@@ -41,6 +45,13 @@ public class Player : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        healAudioDelay -= Time.deltaTime;
+        if (healAudioDelay <= 0)
+        {
+            healAudio.Stop();
+            healAudioDelay = 0;
+        }
+
         if (timer >= minTimeToUpdate && game_started)
         {
             int r = rnd.Next(0, precision);
@@ -50,6 +61,7 @@ public class Player : MonoBehaviour
                 {
                     // cat turns evil
                     catEvil = true;
+                    evilAudio.Play();
                     transform.Find("AngeryParticles").gameObject.SetActive(true);
                     transform.Find("HeartParticles").gameObject.SetActive(false);
                 }
@@ -60,6 +72,7 @@ public class Player : MonoBehaviour
                 {
                     // cat turns good
                     catEvil = false;
+                    evilAudio.Stop();
                     transform.Find("AngeryParticles").gameObject.SetActive(false);
                     transform.Find("HeartParticles").gameObject.SetActive(true);
                 }
@@ -70,6 +83,10 @@ public class Player : MonoBehaviour
 
     public void healPlayer(int heal)
     {
+        if (!healAudio.isPlaying)
+            healAudio.Play();
+        healAudioDelay = 2f;
+
         life = Mathf.Min(life + heal, max_life);
         lifebar.setLife((float)life / max_life);
         if (heal > 0)
@@ -80,6 +97,7 @@ public class Player : MonoBehaviour
     {
         life = Mathf.Max(life - damage, 0);
         lifebar.setLife((float)life / max_life);
+        hurtAudio.Play();
 
         if (life <= 0)
             OnPlayerDied();
