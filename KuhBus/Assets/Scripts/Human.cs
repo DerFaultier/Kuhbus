@@ -14,6 +14,7 @@ public class Human : MonoBehaviour
     public float idleTime = 3;
     public float walkLeftTime = 5;
     public float walkRightTime = 5;
+    private bool game_started = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +24,16 @@ public class Human : MonoBehaviour
         secTotal = idleTime + walkLeftTime + walkRightTime;
     }
 
+    void OnGameStarted_Func()
+    {
+        game_started = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         float secs = Time.realtimeSinceStartup % secTotal;
-        if (secs <= idleTime)
+        if (secs <= idleTime || !game_started)  // human shall idle until game is started
         {
             state = State.idle;
         }
@@ -45,5 +51,15 @@ public class Human : MonoBehaviour
         }
 
         anim.SetInteger("state", (int)state);
+    }
+
+    private void OnEnable()
+    {
+        GameStates.OnGameStarted += OnGameStarted_Func;
+    }
+
+    private void OnDisable()
+    {
+        GameStates.OnGameStarted -= OnGameStarted_Func;
     }
 }

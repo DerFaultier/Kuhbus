@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 2f * jumpHeight * (moveSpeed * moveSpeed) / (jumpDistance * jumpDistance);
 
         defaultGravity = rb.gravityScale;
+
+        rb.simulated = false;
+    }
+
+    void OnGameStarted_Func()
+    {
+        rb.simulated = true;
     }
 
     // Update is called once per frame
@@ -171,6 +178,7 @@ public class PlayerController : MonoBehaviour
         Player.OnDamageReceived += OnDamageReceived_Func;
         Player.OnPlayerHealed += OnHealReceived_Func;
         Player.OnPlayerDied += OnPlayerDied_Func;
+        GameStates.OnGameStarted += OnGameStarted_Func;
     }
 
     private void OnDisable()
@@ -178,6 +186,7 @@ public class PlayerController : MonoBehaviour
         Player.OnDamageReceived -= OnDamageReceived_Func;
         Player.OnPlayerHealed -= OnHealReceived_Func;
         Player.OnPlayerDied -= OnPlayerDied_Func;
+        GameStates.OnGameStarted -= OnGameStarted_Func;
     }
 }
 
