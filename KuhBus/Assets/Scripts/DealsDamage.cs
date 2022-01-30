@@ -8,10 +8,13 @@ public class DealsDamage : MonoBehaviour
     public bool toEvilCat=true;
     public bool toGoodCat=true;
     public int damage = 10;
+
+    private AudioSource audioEffect;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioEffect = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class DealsDamage : MonoBehaviour
         if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
         {
             print("Kuhbus received damage!!!");
+            if (audioEffect) audioEffect.Play();
             collision.collider.GetComponent<Player>().hurtPlayer(damage);
             var contactNormal = collision.contacts[0].normal;
             collision.collider.GetComponent<PlayerController>().stun(0.2f);
