@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public AudioSource hurtAudio;
     public AudioSource healAudio;
     private float healAudioDelay;
+    public AudioSource evilAudio;
 
     private float timer = 0.0f;
     private System.Random rnd;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
                 {
                     // cat turns evil
                     catEvil = true;
+                    evilAudio.Play();
                     transform.Find("AngeryParticles").gameObject.SetActive(true);
                     transform.Find("HeartParticles").gameObject.SetActive(false);
                 }
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour
                 {
                     // cat turns good
                     catEvil = false;
+                    evilAudio.Stop();
                     transform.Find("AngeryParticles").gameObject.SetActive(false);
                     transform.Find("HeartParticles").gameObject.SetActive(true);
                 }
