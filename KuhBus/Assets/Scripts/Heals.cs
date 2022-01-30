@@ -51,12 +51,17 @@ public class Heals : MonoBehaviour
             in_heal_zone = true;
             time_counter = healing_time + 1; // enforce direct heal
             player = collision.collider.GetComponent<Player>();
+            player.transform.Find("HealParticles").gameObject.SetActive(true);
         }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        time_counter = 0;
-        in_heal_zone = false;
+        if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
+        {
+            time_counter = 0;
+            in_heal_zone = false;
+            player.transform.Find("HealParticles").gameObject.SetActive(false);
+        }
     }
 }

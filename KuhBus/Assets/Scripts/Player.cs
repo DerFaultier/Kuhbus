@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
                 {
                     // cat turns evil
                     catEvil = true;
+                    transform.Find("AngeryParticles").gameObject.SetActive(true);
+                    transform.Find("HeartParticles").gameObject.SetActive(false);
                 }
             }
             else
@@ -58,6 +60,8 @@ public class Player : MonoBehaviour
                 {
                     // cat turns good
                     catEvil = false;
+                    transform.Find("AngeryParticles").gameObject.SetActive(false);
+                    transform.Find("HeartParticles").gameObject.SetActive(true);
                 }
             }
             timer = 0;

@@ -2008,6 +2008,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2488818645220217526, guid: 06837301e0770ed40a6e7031aa222c5d, type: 3}
+      propertyPath: m_Name
+      value: HealParticles
+      objectReference: {fileID: 0}
     - target: {fileID: 3250314512410424595, guid: 06837301e0770ed40a6e7031aa222c5d, type: 3}
       propertyPath: m_Name
       value: Player
