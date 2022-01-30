@@ -57,11 +57,12 @@ public class Heals : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Player" && CatCondition(collision.gameObject))
+        if (collision.collider.tag == "Player")
         {
             time_counter = 0;
             in_heal_zone = false;
-            player.transform.Find("HealParticles").gameObject.SetActive(false);
+            if(player)
+                player.transform.Find("HealParticles").gameObject.SetActive(false);
         }
     }
 }
