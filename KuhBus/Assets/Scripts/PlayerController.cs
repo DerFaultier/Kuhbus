@@ -156,6 +156,11 @@ public class PlayerController : MonoBehaviour
         //anim.SetInteger("state", (int)state);
     }
 
+    void OnHealReceived_Func()
+    {
+
+    }
+
     void OnPlayerDied_Func()
     {
         rb.simulated = false;
@@ -164,12 +169,14 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         Player.OnDamageReceived += OnDamageReceived_Func;
+        Player.OnPlayerHealed += OnHealReceived_Func;
         Player.OnPlayerDied += OnPlayerDied_Func;
     }
 
     private void OnDisable()
     {
         Player.OnDamageReceived -= OnDamageReceived_Func;
+        Player.OnPlayerHealed -= OnHealReceived_Func;
         Player.OnPlayerDied -= OnPlayerDied_Func;
     }
 }
