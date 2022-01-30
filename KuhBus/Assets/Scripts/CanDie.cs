@@ -7,6 +7,7 @@ public class CanDie : MonoBehaviour
 
     [SerializeField] private int HP = 1;
     public GameObject deathEffect;
+    public AudioSource oof;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class CanDie : MonoBehaviour
     public void receiveDmg(int amount)
     {
         HP -= amount;
+        oof.Play();
         if (HP == 0)
         {
             if (deathEffect)
