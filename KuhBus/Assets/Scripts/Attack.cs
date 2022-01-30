@@ -40,7 +40,7 @@ public class Attack : MonoBehaviour
         if (dmg > 0)
         {
             attackSoundSource.clip = attackSounds[soundIdx++];
-            if (soundIdx > attackSounds.Count) soundIdx = 0;
+            if (soundIdx >= attackSounds.Count) soundIdx = 0;
         }
         else
         {
