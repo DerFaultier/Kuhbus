@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public static event PlayerDelegate OnPlayerDied;
     public static event PlayerDelegate OnDamageReceived;
     public static event PlayerDelegate OnPlayerHealed;
+    public static event PlayerDelegate OnPlayerWon;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class Player : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= minTimeToUpdate)
         {
-            int r = rnd.Next(0,precision);
+            int r = rnd.Next(0, precision);
             if (catEvil == false)
             {
                 if (r >= catEvilProbability * precision)
@@ -43,7 +44,8 @@ public class Player : MonoBehaviour
                     // cat turns evil
                     catEvil = true;
                 }
-            } else
+            }
+            else
             {
                 if (r < catEvilProbability * precision)
                 {
@@ -58,7 +60,7 @@ public class Player : MonoBehaviour
     public void healPlayer(int heal)
     {
         life = Mathf.Min(life + heal, max_life);
-        lifebar.setLife((float) life / max_life);
+        lifebar.setLife((float)life / max_life);
         if (heal > 0)
             OnPlayerHealed();
     }
@@ -66,7 +68,7 @@ public class Player : MonoBehaviour
     public void hurtPlayer(int damage)
     {
         life = Mathf.Max(life - damage, 0);
-        lifebar.setLife((float) life / max_life);
+        lifebar.setLife((float)life / max_life);
 
         if (life <= 0)
             OnPlayerDied();
@@ -76,8 +78,16 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "InstantDeath" )
+        if (collision.collider.tag == "InstantDeath")
             OnPlayerDied();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "GameWon")
+        {
+            OnPlayerWon();
+            Debug.Log("Game Won");
+        }
+    }
 }
