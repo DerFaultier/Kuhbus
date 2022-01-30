@@ -7129,34 +7129,6 @@ PrefabInstance:
       propertyPath: m_Lens.m_SensorSize.x
       value: 1.7777778
       objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_BiasX
-      value: -0.000000085149495
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_ScreenX
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_DeadZoneWidth
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_LookaheadTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_SoftZoneWidth
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_LookaheadIgnoreY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8668843168943181771, guid: 38282c676ded380429ac458180e8cddf, type: 3}
-      propertyPath: m_LookaheadSmoothing
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38282c676ded380429ac458180e8cddf, type: 3}
 --- !u!1001 &8722124636075545186
