@@ -49,7 +49,7 @@ public class GameStates : MonoBehaviour
         else if (!game_won)
         {
             timer += Time.deltaTime;
-            ui_timer.GetComponent<Text>().text = "Time: " + timer;
+            ui_timer.GetComponent<Text>().text = "Time: " + timer.ToString("0.00");
         }
     }
 
