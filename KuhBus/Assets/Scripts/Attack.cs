@@ -24,9 +24,10 @@ public class Attack : MonoBehaviour
     void Update()
     {
         attackDelay -= Time.deltaTime;
-        if (attackDelay < 0)
+        if (attackDelay <= 0)
         {
-            attacking = false;
+            attacking = false; 
+            attackDelay = 0;
         }
     }
 
