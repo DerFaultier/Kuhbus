@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private float timer = 0.0f;
     private System.Random rnd;
     private int precision = 1000;    // precision of random number
+    private bool game_started = false;
 
     public delegate void PlayerDelegate();
     public static event PlayerDelegate OnPlayerDied;
@@ -30,11 +31,17 @@ public class Player : MonoBehaviour
         rnd = new System.Random();
     }
 
+    void OnGameStarted_Func()
+    {
+        timer = 0.0f;
+        game_started = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= minTimeToUpdate)
+        if (timer >= minTimeToUpdate && game_started)
         {
             int r = rnd.Next(0, precision);
             if (catEvil == false)
@@ -89,5 +96,15 @@ public class Player : MonoBehaviour
             OnPlayerWon();
             Debug.Log("Game Won");
         }
+    }
+
+    private void OnEnable()
+    {
+        GameStates.OnGameStarted += OnGameStarted_Func;
+    }
+
+    private void OnDisable()
+    {
+        GameStates.OnGameStarted -= OnGameStarted_Func;
     }
 }
