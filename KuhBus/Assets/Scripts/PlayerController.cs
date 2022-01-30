@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fallingGravity = 3f;
     [SerializeField] private LayerMask ground;
     [SerializeField] private float rayLength = 1f;
+    [SerializeField] private float rayOffset = 0.25f;
 
     private enum State { idle, run, jump, fall, attack, evil_idle, evil_run, evil_jump, evil_fall, evil_attack };
     private State state = State.idle;
@@ -64,9 +65,19 @@ public class PlayerController : MonoBehaviour
         animationState();
     }
 
+
     void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + new Vector3(0, -rayLength, 0));
+        {
+            Vector3 start = transform.position + new Vector3(rayOffset, 0, 0);
+            Vector3 end = start + new Vector3(0, -rayLength, 0);
+            Gizmos.DrawLine(start, end);
+        }
+        {
+            Vector3 start = transform.position + new Vector3(-rayOffset, 0, 0);
+            Vector3 end = start + new Vector3(0, -rayLength, 0);
+            Gizmos.DrawLine(start, end);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,9 +85,14 @@ public class PlayerController : MonoBehaviour
     }
 
     private void groundCheck() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector3(0,-1,0), rayLength, ground);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(-rayOffset, 0, 0), new Vector3(0,-1,0), rayLength, ground);
+        if (!hit)
+        {
+            hit = Physics2D.Raycast(transform.position + new Vector3(+rayOffset, 0, 0), new Vector3(0, -1, 0), rayLength, ground);
+        }
         isGrounded = hit;
-        if (!hit) return;
+
+        if (!isGrounded) return;
 
         transform.parent = null;
         platform = null;

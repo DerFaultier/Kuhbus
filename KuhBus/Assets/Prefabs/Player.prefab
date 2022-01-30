@@ -14576,6 +14576,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 136
   rayLength: 0.8
+  rayOffset: 0.25
 --- !u!114 &2148336013606560097
 MonoBehaviour:
   m_ObjectHideFlags: 0
