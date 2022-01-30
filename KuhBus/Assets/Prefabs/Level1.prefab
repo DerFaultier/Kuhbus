@@ -3686,7 +3686,9 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 4627110426462092052}
     m_ColliderPaths:
-    - - X: 336600032
+    - - X: 425800032
+        Y: -19700000
+      - X: 336600032
         Y: -19700000
       - X: 326800000
         Y: -9899968
@@ -3738,8 +3740,6 @@ CompositeCollider2D:
         Y: -79200000
       - X: 425800032
         Y: -79200000
-      - X: 425800032
-        Y: -19700000
   m_CompositePaths:
     m_Paths:
     - - {x: 42.579975, y: -7.92}
