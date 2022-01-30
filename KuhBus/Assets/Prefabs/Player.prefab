@@ -14609,7 +14609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 1
-  dmg: 1
   attacking: 0
   attackSoundSource: {fileID: 4285404852210490727}
   attackSounds:
@@ -14617,6 +14616,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e492035625f5cd14092a16d16d1e2c02, type: 3}
   - {fileID: 8300000, guid: 7c9087fe064a15d4eb9e0354bee58f96, type: 3}
   - {fileID: 8300000, guid: 0b2e7c4a0e2241143811d91486e3d302, type: 3}
+  kopfnussSound: {fileID: 8300000, guid: 0f8865dcbd2b8bd4d9d9363977c5c964, type: 3}
 --- !u!95 &3219106145662207582
 Animator:
   serializedVersion: 4

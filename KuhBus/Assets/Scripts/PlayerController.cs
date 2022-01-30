@@ -100,9 +100,10 @@ public class PlayerController : MonoBehaviour
             state = player.catEvil ? State.evil_jump : State.jump;
           }
           if (Input.GetButtonDown("Fire1"))
-            {
-                GetComponent<Attack>().doAttack();
-            }
+          {
+            int dmg = player.catEvil ? 1 : 0;
+            GetComponent<Attack>().doAttack(dmg);
+          }
         }
 
         if ( !isGrounded && ( !Input.GetButton("Jump") || rb.velocity.y < 0.1f))

@@ -5,13 +5,15 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public float range=1.0f;
-    public int dmg=1;
 
     public bool attacking = false;
 
     public AudioSource attackSoundSource;
     public List<AudioClip> attackSounds;
+    public AudioClip kopfnussSound;
     int soundIdx = 0;
+
+    float attackDelay = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +23,31 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        attackDelay -= Time.deltaTime;
+        if (attackDelay < 0)
+        {
+            attacking = false;
+        }
     }
 
-    public void doAttack()
+    public void doAttack(int dmg)
     {
         if (attacking) return;
+        attackDelay = 0.5f;
         attacking = true;
 
-        attackSoundSource.clip = attackSounds[soundIdx++];
-        if (soundIdx > attackSounds.Count) soundIdx = 0;
+        if (dmg > 0)
+        {
+            attackSoundSource.clip = attackSounds[soundIdx++];
+            if (soundIdx > attackSounds.Count) soundIdx = 0;
+        }
+        else
+        {
+            attackSoundSource.clip = kopfnussSound;
+        }
+
         attackSoundSource.Play();
 
-        StartCoroutine("stopAttack", 0.5f);
         RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, new Vector2(1.0f*transform.localScale.x, 0.0f), range);
         if (hit.Length>2)
         {
@@ -41,11 +55,5 @@ public class Attack : MonoBehaviour
             if (dmgDeal)
                 dmgDeal.receiveDmg(dmg);
         }
-    }
-
-    public IEnumerator stopAttack(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        attacking = false;
     }
 }
