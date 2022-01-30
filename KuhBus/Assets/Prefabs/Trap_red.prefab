@@ -102,6 +102,7 @@ MonoBehaviour:
   toEvilCat: 1
   toGoodCat: 1
   damage: 10
+  audioEffect: {fileID: 2140788584061833587}
 --- !u!82 &2140788584061833587
 AudioSource:
   m_ObjectHideFlags: 0
