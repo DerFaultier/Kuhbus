@@ -2019,6 +2019,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 8754071009949444242, guid: 5052988ac53fa374b950178b6bcc83b0, type: 3}
+      propertyPath: MaxDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754071009949444242, guid: 5052988ac53fa374b950178b6bcc83b0, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5052988ac53fa374b950178b6bcc83b0, type: 3}
 --- !u!1001 &7647389158746196765
@@ -2145,6 +2153,10 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1019643809895759079}
+    - target: {fileID: 8668843168880721087, guid: 38282c676ded380429ac458180e8cddf, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7777778
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38282c676ded380429ac458180e8cddf, type: 3}
 --- !u!1001 &8722124636075545186
