@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStates : MonoBehaviour
 {
 
     public float time_start_page_shown = 3;   // time in seconds to show start page
     private bool game_started = false;
+    private bool game_won = false;
     private float timer = 0.0f;
+    private GameObject gamepage;
+    private GameObject ui_timer;
+    private GameObject lifebar;
+
 
     public delegate void GameDelegate();
     public static event GameDelegate OnGameStarted;
@@ -15,7 +21,10 @@ public class GameStates : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.Find("Lifebar").gameObject.SetActive(false);
+        gamepage = transform.Find("GamePage").gameObject;
+        ui_timer = gamepage.transform.Find("Timer").gameObject;
+        lifebar = gamepage.transform.Find("Lifebar").gameObject;
+        gamepage.SetActive(false);
         transform.Find("GameStartPage").gameObject.SetActive(true);
     }
 
@@ -26,25 +35,36 @@ public class GameStates : MonoBehaviour
             //Time.realtimeSinceStartup;
             if (timer >= time_start_page_shown)
             {
-                transform.Find("Lifebar").gameObject.SetActive(true);
+                gamepage.SetActive(true);
                 transform.Find("GameStartPage").gameObject.SetActive(false);
                 OnGameStarted();
                 game_started = true;
+                timer = 0.0f;
             }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+        }
+        else if (!game_won)
+        {
             timer += Time.deltaTime;
+            ui_timer.GetComponent<Text>().text = "Time: " + timer;
         }
     }
 
     void OnPlayerDied_Func()
     {
-        transform.Find("Lifebar").gameObject.SetActive(false);
+        gamepage.gameObject.SetActive(false);
         transform.Find("GameOverPage").gameObject.SetActive(true);
     }
 
     void OnPlayerWon_Func()
     {
-        transform.Find("Lifebar").gameObject.SetActive(false);
+        game_won = true;
         transform.Find("GameWonPage").gameObject.SetActive(true);
+        gamepage.gameObject.SetActive(true);
+        lifebar.SetActive(false);
     }
 
     private void OnEnable()
