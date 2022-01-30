@@ -9,10 +9,13 @@ public class Attack : MonoBehaviour
 
     public bool attacking = false;
 
+    public AudioSource attackSoundSource;
+    public List<AudioClip> attackSounds;
+    int soundIdx = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -25,6 +28,11 @@ public class Attack : MonoBehaviour
     {
         if (attacking) return;
         attacking = true;
+
+        attackSoundSource.clip = attackSounds[soundIdx++];
+        if (soundIdx > attackSounds.Count) soundIdx = 0;
+        attackSoundSource.Play();
+
         StartCoroutine("stopAttack", 0.5f);
         RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, new Vector2(1.0f*transform.localScale.x, 0.0f), range);
         if (hit.Length>2)
