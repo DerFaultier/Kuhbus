@@ -13,6 +13,7 @@ public class GameStates : MonoBehaviour
     private GameObject gamepage;
     private GameObject ui_timer;
     private GameObject lifebar;
+    private float highscore;
 
 
     public delegate void GameDelegate();
@@ -26,6 +27,8 @@ public class GameStates : MonoBehaviour
         lifebar = gamepage.transform.Find("Lifebar").gameObject;
         gamepage.SetActive(false);
         transform.Find("GameStartPage").gameObject.SetActive(true);
+        highscore = PlayerPrefs.GetFloat("HighScore");
+        gamepage.transform.Find("Highscore").gameObject.GetComponent<Text>().text = "Highscore: " + highscore.ToString("0.00");
     }
 
     void FixedUpdate()
@@ -65,6 +68,11 @@ public class GameStates : MonoBehaviour
         transform.Find("GameWonPage").gameObject.SetActive(true);
         gamepage.gameObject.SetActive(true);
         lifebar.SetActive(false);
+        if (highscore < Mathf.Epsilon || timer < highscore)
+        {
+            PlayerPrefs.SetFloat("HighScore", timer);
+        }
+        gamepage.transform.Find("Highscore").gameObject.GetComponent<Text>().text = "Highscore: " + PlayerPrefs.GetFloat("HighScore").ToString("0.00");
     }
 
     private void OnEnable()
